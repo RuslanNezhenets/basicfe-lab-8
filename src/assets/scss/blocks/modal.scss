@@ -1,0 +1,166 @@
+.modal{
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+
+	background-color: rgb(#000, .4);
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+
+	&.show{
+		display: flex;
+	}
+}
+
+.modal__content{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+	width: 100%;
+	max-width: 500px;
+	padding: 0 80px 40px;
+	position: relative;
+
+	text-align: center;
+
+	background-color: #202020;
+	border-radius: 5px;
+
+	transform: translateY(-50px);
+	transition: transform 200ms ease-in-out,
+	opacity 200ms ease-in-out;
+	opacity: 0;
+
+	@include breakpoint($mobile-bp){
+    	padding: 20px;
+  	}
+}
+
+.modal__content__star{
+	display: flex;
+	position: relative;
+	justify-content: center;
+	transform: scale(1.1);
+	margin: auto;
+}
+
+.modal__content__counter{
+	position: absolute;
+	font-size: 30px;
+	font-weight: 500;
+	margin-top: -18px;
+}
+
+.modal__close{
+	padding: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+	opacity: .5;
+
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+
+	transition: transform .2s linear, opacity .2s linear;
+
+	&:hover{
+		transform: rotate(90deg);
+		opacity: 1;
+	}
+}
+
+.modal__content__stars{
+	display: flex;
+	margin-bottom: 20px;
+
+	@include breakpoint($mobile-bp){
+    	flex-wrap: wrap;
+  	}
+}
+
+.modal__content-star{
+	display: inline-block;
+	padding: 5px;
+	cursor: pointer;
+
+	@include breakpoint($mobile-bp){
+    	width: 20%;
+  	}
+}
+
+.modal__content-icon{
+	fill: #01DF01;
+	width: 100px;
+	height: 100px;
+	margin-top: -50px;
+	margin-bottom: 20px;
+
+	&.small{
+		width: 25px;
+		height: 25px;
+		margin: 0;
+	}
+
+	&.small + &.small{
+		margin-left: 5px;
+	}
+
+}
+
+.modal__content__title{
+	text-transform: uppercase;
+	color: #f5c518;
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+
+.modal__content__game-title{
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.modal__content__stars{
+
+}
+
+.modal__content__btn{
+	display: block;
+	background-color: #575757;
+	padding: 10px 0;
+	border-radius: 5px;
+	color: rgba(#fff, .8);
+	font-weight: 500;
+
+	margin-bottom: 20px;
+
+	&--delete{
+		background-color: #313131;
+		cursor: pointer;
+
+		&:hover{
+			background-color: #575757;
+		}
+	}
+	&.active{
+		background-color: #313131;
+		color: #fff;
+		cursor: pointer;
+		transition: background-color .1s linear;
+
+		&:hover{
+			background-color: #575757;
+		}
+	}
+}

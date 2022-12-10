@@ -1,0 +1,34 @@
+.not_found{
+	display: none;
+	text-align: center;
+	width: 100%;
+
+	&.active{
+		display: block;
+	}
+}
+.not_found__title{
+	font-size: 50px;
+    line-height: 50px;
+}
+.not_found__text{
+	color: rgba(#fff, .5);
+    font-size: 16px;
+    line-height: 25px;
+    margin-top: 5px;
+}
+
+.gallery{
+	display: flex;
+
+	@include breakpoint($mobile-bp){
+        flex-direction: column-reverse;
+    }
+}
+
+.games{
+	width: calc(100% - 245px);
+	@include breakpoint($mobile-bp){
+       width: 100%;
+    }
+}

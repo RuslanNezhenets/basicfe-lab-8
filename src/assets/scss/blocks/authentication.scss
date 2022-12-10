@@ -1,0 +1,154 @@
+.authentication{
+	display: flex;
+	height: calc(100vh - 50px);
+	flex-wrap: wrap;
+
+	align-items: center;
+
+	@include breakpoint($mobile-bp){
+     	height: 100%;   
+    }
+}
+
+.authentication__left{
+	width: 50%;
+
+	@include breakpoint($mobile-bp){
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.authentication__content{
+	width: 75%;
+
+	@include breakpoint($mobile-bp){
+     	width: 100%;
+    }
+}
+
+
+.authentication__left__title{
+	font-size: 50px;
+	margin-bottom: 10px;
+}
+.authentication__left__text{
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+.authentication__input{
+	display: block;
+	width: 100%;
+
+	background-color: #202020;
+	border: none;
+	border-radius: 5px;
+
+	padding: 20px;
+	margin-bottom: 30px;
+
+	color: #fff;
+	font-size: 20px;
+}
+
+.authentication__button{
+	width: 100%;
+	background-color: #fff;
+
+	border: none;
+	border-radius: 5px;
+
+	padding: 20px;
+	margin-bottom: 30px;
+
+	font-size: 20px;
+
+	transition: background-color .2s linear;
+
+	&:hover{
+		background-color: darken(#fff, 10%);
+	}
+}
+
+.authentication__link{
+	width: 100%;
+	display: block;
+	font-size: 14px;
+	color: #fff;
+
+	text-align: center;
+}
+
+
+.authentication__right{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	width: 50%;
+	text-align: center;
+
+	@include breakpoint($mobile-bp){
+        width: 100%;
+    }
+}
+
+.authentication__right__title{
+	width: 100%;
+	font-size: 35px;
+	position: relative;
+
+	line-height: 1.2;
+
+	margin-bottom: 20px;
+}
+
+.authentication__social{
+	display: flex;
+	width: 100%;
+
+	align-items: center;
+
+	margin-bottom: 30px;
+
+	&:nth-child(odd) .authentication__social__btn{
+		background-color: #4267b2;
+
+		&:hover{
+			background-color: darken(#4267b2, 5%);
+		}
+	}
+}
+
+
+.authentication__social__icon{
+	width: 30px;
+	height: 30px;
+	fill: #fff;
+
+	position: absolute;
+
+	margin-left: 10px;
+}
+
+.authentication__social__btn{
+	width: 100%;
+	background-color: #4a76a8;
+
+	border: none;
+	border-radius: 5px;
+
+	padding: 15px;
+	padding-left: 40px;
+
+	font-size: 20px;
+	color: #fff;
+
+	transition: background-color .2s linear;
+
+	&:hover{
+		background-color: darken(#4a76a8, 5%);
+	}
+}

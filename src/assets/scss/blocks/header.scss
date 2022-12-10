@@ -1,0 +1,155 @@
+.header {
+    background-color: #2a2a2a;
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    position: fixed;
+    z-index: 1000;
+}
+
+.header__inner {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.header__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.header__logo{
+    width: 4rem;
+    margin: 0 3rem;
+
+    @include breakpoint($mobile-bp){
+        display: none;
+    }
+}
+
+.header__list {
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+}
+
+.header__list-item {
+    display: flex;
+    margin-right: 20px;
+    padding: 0 15px;
+    height: 100%;
+    align-items: center;
+    position: relative;
+
+    &:last-child {
+        margin-right: 0;
+    }
+    &:hover{
+        &::before{
+            height: 5px;
+        }
+    }
+    &::before{
+        content: "";
+        display: block;
+        height: 0;
+        transition: height .2s ease-in-out;
+        width: 100%;
+        background-color: green;
+        position: absolute;
+        bottom: 0;
+        margin-left: -15px;
+    }
+    @include breakpoint($mobile-bp){
+        &::before{
+            display: none;
+        }
+    }
+
+    @include breakpoint($mobile-bp){
+        margin-right: 10px;
+        padding: 0 5px;
+    }
+}
+
+.header__list-link {
+    color: gray;
+    text-decoration: none;
+    transition: color .2s linear;
+
+    &:hover{
+        color: rgb(224, 222, 222);
+        transition: color .2s linear;
+    }
+
+    @include breakpoint($tablet-bp){
+        font-size: 12px;
+    }
+
+    @include breakpoint($mobile-bp){
+        font-size: 10px;
+    }
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition-duration: 250ms;
+    transition-property: background-color;
+
+    &:hover {
+        background-color: lighten(#2a2a2a, 7%);
+        transition-duration: 250ms;
+        transition-property: background-color;
+    }
+}
+
+.header__enter {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    margin: 0 40px;
+
+    @include breakpoint($tablet-bp){
+        margin: 0;
+    }
+}
+
+.header__enterImage{
+    width: 40px;
+
+    @include breakpoint($mobile-bp){
+        display: none;
+    }
+}
+
+.header__enterText {
+    margin-top: 5px;
+    margin-left: 20px;
+
+    opacity: 80%;
+    color: #fff;
+    
+    transition: opacity .2s linear;
+
+    &:hover {
+        opacity: 100%;
+    }
+
+    @include breakpoint($tablet-bp){
+        font-size: 12px;
+    }
+
+    @include breakpoint($mobile-bp){
+        font-size: 10px;
+    }
+}
